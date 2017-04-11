@@ -1,0 +1,607 @@
+*{
+  overflow-x: hidden;
+}
+body
+{
+margin: 0px;
+padding: 0px;
+background-image: url(../AppImg/bg.jpg);
+background-size: 100% 100%;
+background-color: #00CED1;
+}
+
+/*footer
+{
+  width: 100%;
+}*/
+.publicidad-h{
+  width: 70%;
+  height: 20vh;
+  background-image: url(../AppImg/publicidad.png);
+  background-color: red;
+  background-size: 100% 100%;
+  background-repeat: no-repeat;
+  margin-left: 20px;
+}
+.publicidad-v{
+  width: 10%;
+  height: 80vh;
+  background-image: url(../AppImg/bannerV.png);
+  background-size: 100% 100%;
+  background-repeat: no-repeat;
+  position: fixed;
+  right: 10;
+  bottom: 5;
+}
+.information{
+  width: 80%;
+  height: 200px;
+  margin: 10px 0px;
+  margin-left: 20px;
+}
+.information form{
+  width: 100%;
+  height: 100%;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  position: relative;
+}
+.information form .Price{
+  position: absolute;
+  z-index: 100;
+  right: 0;
+  background-color: #404040;
+  color: #fff;
+  border-radius:  30px 5px 15px 50px;
+  padding: 5px 20px;
+}
+.information form .Date{
+  position: absolute;
+  z-index: 100;
+  right: 0;
+  bottom: 0;
+  background-color: #d19696;
+  color: #fff;
+  padding: 5px 20px;
+}
+.information form img{
+  width: 300px;
+  height: 200px;
+}
+.information form .info{
+  width: 100%;
+  padding-left: 5px;
+  background-color: #cbcbcb;
+}
+.information form .info h4{
+  text-decoration: underline;
+  font-weight: bold;
+}
+/*#table
+{
+    font-family: arial, sans-serif;
+    border-collapse: collapse;
+    width: 100%;
+    float: left;
+    margin-top: -22px;
+}
+
+td, th
+{
+    border-top: 1px solid #747474;
+    text-align: center;
+}*/
+
+footer{
+  width: 100%;
+  background-color: black;
+}
+
+
+/* MemeInfo style */
+
+.GalInfo{
+  width: 70%;
+  background-color: rgba(170, 170, 170, 0.4);
+  margin-left: 10px;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -ms-flex-wrap: wrap;
+      flex-wrap: wrap;
+}
+.GalInfo .top-info{
+  width: 100%;
+  /*height: 30px;*/
+  padding: 5px 10px;
+  background-color: #f0f0f0;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-pack: justify;
+      -ms-flex-pack: justify;
+          justify-content: space-between;
+  -ms-flex-line-pack: center;
+      align-content: center;
+  -webkit-box-align: baseline;
+      -ms-flex-align: baseline;
+          align-items: baseline;
+  font-weight: bold;
+}
+.GalInfo .top-info .Price{
+  background-color: #404040;
+  color: #fff;
+  border-radius:  30px 5px 15px 5px;
+  padding: 10px 20px;
+}
+
+.GalInfo .ImageArea{
+  width: 50%;
+}
+.GalInfo .ImageArea .imgB{
+  width: 100%;
+  height: 300px;
+  border: 5px solid #e8960c;
+}
+.GalInfo .ImageArea .AimgS{
+  background-color: rgba(0, 0, 0, 0.62);
+  width: 100%;
+  padding: 5px 0px;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -ms-flex-wrap: wrap;
+      flex-wrap: wrap;
+  -webkit-box-pack: center;
+      -ms-flex-pack: center;
+          justify-content: center;
+
+}
+
+.GalInfo .ImageArea .AimgS .imgS{
+  width: 100px;
+  height: 100px;
+  margin: 0px 5px;
+  margin-bottom: 5px;
+  border: 5px solid #fff;
+}
+.GalInfo .ImageArea .AimgS .imgS:hover{
+  border: 5px solid #e8960c;
+}
+
+
+.GalInfo .InformationData{
+  /*background-color: green;*/
+  width: 50%;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-orient: vertical;
+  -webkit-box-direction: normal;
+      -ms-flex-direction: column;
+          flex-direction: column;
+  -webkit-box-pack: justify;
+      -ms-flex-pack: justify;
+          justify-content: space-between;
+}
+
+.GalInfo .InformationData .textInfo{
+  width: 100%;
+  height: 60%;
+  position: relative;
+}
+.GalInfo .InformationData .textInfo .Date{
+  position: absolute;
+  bottom: 0;
+  right: 0;
+  background-color: rgb(21, 162, 128);
+  color: #fff;
+  box-shadow: 0px 1px rgba(0, 0, 0, 0.7);
+  padding: 0px 5px;
+  font-weight: bold;
+}
+.GalInfo .InformationData form{
+  background-color: red;
+  height: 40%;
+  width: 100%;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-orient: vertical;
+  -webkit-box-direction: normal;
+      -ms-flex-direction: column;
+          flex-direction: column;
+}
+.GalInfo .InformationData form textarea{
+  max-width: 100%;
+  height: 80%;
+  padding-left: 10px;
+  padding-top: 10px;
+  padding-right: 5px;
+  padding-bottom: 2px;
+}
+
+
+.publicidad-s{
+  position: absolute;
+  width: 400px;
+  height: 400px;
+  background-image: url(../AppImg/bannerS.png);
+  background-color: red;
+  background-size: 100% 100%;
+  background-repeat: no-repeat;
+  margin-left: 20px;
+  right: 5px;
+  top: 100px;
+}
+
+/*AdminPanel Desing Area*/
+/*AdminPanel Desing Area*/
+/*AdminPanel Desing Area*/
+/*AdminPanel Desing Area*/
+/*AdminPanel Desing Area*/
+/*AdminPanel Desing Area*/
+
+.PostAdb{
+  margin: auto;
+  width: 90%;
+  background-color: rgb(198, 198, 198);
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -ms-flex-pack: distribute;
+      justify-content: space-around;
+   box-shadow: 0px 5px rgba(0, 0, 0, 0.3);
+}
+
+.containerAdminPublication{
+  /*background-color: red;*/
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -ms-flex-wrap: wrap;
+      flex-wrap: wrap;
+  -webkit-box-pack: center;
+      -ms-flex-pack: center;
+          justify-content: center;
+  width: 100%;
+
+}
+.containerAdminPublication form{
+  width: 450px;
+  height: 450px;
+  margin: 15px 10px;
+  position: relative;
+  border: 4px solid #fff;
+}
+.containerAdminPublication form .butonMPositionDel{
+  position: absolute;
+  right: 0;
+  top: 0;
+  z-index: 100;
+  border: 0;
+  background-color: rgb(227, 44, 44);
+  padding: 15px 20px;
+  color: #fff;
+  font-weight: bold;
+  font-size: 16px;
+  border-left: 4px solid #fff;
+  border-bottom:4px solid #fff;
+}
+.containerAdminPublication form .butonMPositionEdt{
+  position: absolute;
+  left: 0;
+  top: 5;
+  z-index: 100;
+  border: 0;
+  background-color: rgb(218, 227, 44);
+  padding: 15px 20px;
+  color: #fff;
+  font-weight: bold;
+  font-size: 16px;
+  border-right: 4px solid #fff;
+  border-bottom:4px solid #fff;
+}
+.containerAdminPublication form .butonMPositionEdt:hover{background-color: rgb(158, 179, 33);}
+.containerAdminPublication form .butonMPositionDel:hover{background-color: rgb(179, 33, 33);}
+.containerAdminPublication form h4{
+  position: absolute;
+  bottom: 0;
+  width: 100%;
+  background-color: rgba(0, 0, 0, 0.72);
+  color: #fff;
+  padding: 5px 0px;
+  padding-left: 4px;
+}
+.containerAdminPublication form h4 b{
+  color: #28b2cc;
+}
+.containerAdminPublication form img{
+  width: 100%;
+  height: 100%;
+}
+/*Admin Delete*/
+.containerAdminNeoAdmin{
+  width: 100%;
+  min-height: 300px;
+  margin-bottom: 100px;
+}
+.containerAdminNeoAdmin h2{
+  width: 100%;
+  background-color: rgb(215, 215, 215);
+  padding: 5px 0px;
+  padding-left: 5px;
+  font-weight: bold;
+}
+.containerAdminNeoAdmin .usuariosO{
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -ms-flex-wrap: wrap;
+      flex-wrap: wrap;
+  -webkit-box-pack: center;
+      -ms-flex-pack: center;
+          justify-content: center;
+}
+.containerAdminNeoAdmin form{
+  background-color: rgba(0, 0, 0, 0.6);
+  width: 500px;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-orient: vertical;
+  -webkit-box-direction: normal;
+      -ms-flex-direction: column;
+          flex-direction: column;
+  color: #fff;
+  margin: 10px 5px;
+}
+.containerAdminNeoAdmin form h4{
+  margin-left: 5px;
+}
+.containerAdminNeoAdmin form .ButtonArea{
+  width: 100%;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  padding: 0px 5px;
+}
+.containerAdminNeoAdmin form .ButtonArea .mbutton{
+  border: 0px;
+  width: 100%;
+  height: 40px;
+  color: #fff;
+  font-weight: bold;
+}
+.containerAdminNeoAdmin form .ButtonArea .m-red{
+  background-color: rgb(226, 46, 46);
+  border-right: 1px solid #c4c3c3;
+}
+.containerAdminNeoAdmin form .ButtonArea .m-red:hover{
+  background-color: rgb(182, 41, 41);
+}
+.containerAdminNeoAdmin form .ButtonArea .m-blue{
+  background-color: rgb(46, 183, 226);
+  border-left: 1px solid #c4c3c3;;
+}
+.containerAdminNeoAdmin form .ButtonArea .m-blue:hover{
+  background-color: rgb(37, 148, 182);
+}
+
+/*AboutUs Desing Area*/
+/*AboutUs Desing Area*/
+/*AboutUs Desing Area*/
+/*AboutUs Desing Area*/
+/*AboutUs Desing Area*/
+/*AboutUs Desing Area*/
+
+.containerAboutUs{
+  width: 100vw;
+  height: 100vh;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-pack: center;
+      -ms-flex-pack: center;
+          justify-content: center;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+  -ms-flex-wrap: wrap;
+      flex-wrap: wrap;
+}
+
+.containerAboutUs .Creator{
+  width: 90%;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -ms-flex-wrap: nowrap;
+      flex-wrap: nowrap;
+}
+.containerAboutUs .Creator .Participant{
+  width: 100%;
+  height: 100%;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-orient: vertical;
+  -webkit-box-direction: normal;
+      -ms-flex-direction: column;
+          flex-direction: column;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+  -webkit-box-pack: center;
+      -ms-flex-pack: center;
+          justify-content: center;
+  background-color: white;
+  box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.2), 0 6px 20px 0 rgba(0, 0, 0, 0.19);
+  margin: 10px;
+  padding: 5px 0px;
+  cursor: pointer;
+}
+.containerAboutUs .Creator .Participant:hover{
+  box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.7), 0 6px 20px 0 rgba(0, 0, 0, 0.7);
+}
+.containerAboutUs .Creator .Participant img{
+  width: 150px;
+  height: 150px;
+  border: 3px solid rgb(30, 152, 221);
+  border-radius: 50%;
+}
+.containerAboutUs .Creator .Participant img:hover {box-shadow: 0 0 2px 1px rgba(0, 0, 0, 0.5);}
+/*.containerAboutUs .Creator .Participant h2{}
+.containerAboutUs .Creator .Participant h3{}*/
+
+.containerAboutUs .Creator .Participant hr{
+  border: 1.5px solid #060606;
+  width: 90%;
+}
+.containerAboutUs .Creator .Participant h5{
+  width: 90%;
+  text-align: center;
+}
+
+/*Mision y vision*/
+.containerAboutUs .infoMV{
+  background-color: rgba(0, 0, 0, 0.68);
+  width: 90%;
+  height: 300px;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -ms-flex-wrap: nowrap;
+      flex-wrap: nowrap;
+}
+.containerAboutUs .infoMV .mision, .vision{
+  width: 100%;
+}
+.containerAboutUs .infoMV .mision h2, .vision h2{
+  width: 100%;
+  text-align: center;
+  padding: 10px 0px;
+  font-weight: bold;
+  color: rgb(255, 255, 255);
+  text-decoration: underline;
+  margin-bottom: 30px;
+}
+.containerAboutUs .infoMV .mision p, .vision p{
+  width: 100%;
+  text-align: center;
+  padding: 10px 0px;
+  font-weight: bold;
+  font-size: 16px;
+  color: rgb(255, 255, 255);
+}
+
+/*Categories Desing Area*/
+/*Categories Desing Area*/
+/*Categories Desing Area*/
+/*Categories Desing Area*/
+/*Categories Desing Area*/
+/*Categories Desing Area*/
+.big-space{
+  width: 100%;
+  min-height: 100vh;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-pack: justify;
+      -ms-flex-pack: justify;
+          justify-content: space-between;
+  padding: 0px 10px;
+}
+
+.Option-space{
+  background-color: #f0f0f0;
+  width: 20%;
+  max-height: 500px;
+  padding: 10px 5px;
+  margin-left: 10px;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-orient: vertical;
+  -webkit-box-direction: normal;
+      -ms-flex-direction: column;
+          flex-direction: column;
+  box-shadow: 3px 5px rgba(0, 0, 0, 0.5);
+}
+.Option-space h3{
+  -ms-flex-item-align: center;
+      -ms-grid-row-align: center;
+      align-self: center;
+}
+.Option-space hr{
+  -ms-flex-item-align: center;
+      -ms-grid-row-align: center;
+      align-self: center;
+  border: 1.5px solid;
+  border-color: rgb(73, 73, 73);
+  width: 80%;
+}
+.Option-space label{-ms-flex-item-align: center;-ms-grid-row-align: center;align-self: center;}
+.Option-space select{
+  width: 100%;
+  margin-top: 5px;
+  height: 30px;
+  font-weight: bold;
+}
+
+.productos-space{
+  background-color: rgba(0, 0, 0, 0.5);
+  border-radius: 10px;
+  width: 75%;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -ms-flex-wrap: wrap;
+      flex-wrap: wrap;
+  -webkit-box-pack: center;
+      -ms-flex-pack: center;
+          justify-content: center;
+}
+.productos-space .form-product{
+  width: 30%;
+  height: 245px;
+  background-color: rgb(223, 223, 223);
+  margin: 10px 5px;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -ms-flex-wrap: wrap;
+      flex-wrap: wrap;
+  position: relative;
+  cursor: pointer;
+}
+.productos-space .form-product .date{
+  position: absolute;
+  right: 0;
+  z-index: 100;
+  background-color: rgb(21, 162, 128);
+  color: #fff;
+  box-shadow: 0px 1px rgba(0, 0, 0, 0.7);
+  padding: 0px 5px;
+  font-weight: bold;
+}
+.productos-space .form-product .imageG{
+  width: 100%;
+  height: 200px;
+}
+.productos-space .form-product .InformationP{
+  width: 100%;
+}
+.productos-space .form-product .InformationP .infoS{
+  width: 100%;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -ms-flex-pack: distribute;
+      justify-content: space-around;
+  -webkit-box-align: baseline;
+      -ms-flex-align: baseline;
+          align-items: baseline;
+  background-color: #f0f0f0;
+}
