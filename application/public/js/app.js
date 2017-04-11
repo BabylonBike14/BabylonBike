@@ -242,6 +242,7 @@ function changeImg(img)
     .done(function(r)
     {
       $('#r').html(r);
+      window.location.reload();
     })
     .fail(function() {
       console.log("error");
@@ -263,6 +264,7 @@ function changeImg(img)
     .done(function(r)
     {
       $('#r').html(r);
+      window.location.reload();
     })
     .fail(function() {
       console.log("error");
