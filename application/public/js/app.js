@@ -186,6 +186,7 @@ function changeImg(img)
     {
       $("#commentDiv").html(r);
       $("#comment").val(" ");
+      window.location.reload();
     })
     .always(function() {
     });
