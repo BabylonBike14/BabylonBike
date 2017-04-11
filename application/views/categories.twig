@@ -1,0 +1,104 @@
+{% extends 'template/App.twig' %}
+
+{% block ChildContent %}
+<p></p><br>
+<p></p><br>
+
+<div class="big-space">
+
+<div class="Option-space">
+      <h3>Que quieres ver?</h3><hr>
+
+    <form class="" action="" method="post" id="frmSearchProduct">
+
+      <label>Producto</label>
+      <select name="searchProduct">
+        <option value="Bicicleta">Bicicleta</option>
+        <option value="Accesorio">Accesorio</option>
+        <option value="Componente">Componente</option>
+      </select>
+        <input type="submit" name="" class="btn btn-info" value="Buscar por producto">
+
+    </form>
+
+    <form class="" action="" method="post" id="frmSearchBike">
+
+      <label>Tipo de Bicicleta</label>
+      <select name="searchBike">
+        <option value="montaña">Bicicleta de monta&ntilde;a</option>
+        <option value="pista">Bicicleta de pista</option>
+        <option value="electrica">Bicicleta electrica</option>
+      </select>
+      <input type="submit" name="" class="btn btn-primary" value="Buscar por tipo de Bicicleta">
+
+    </form>
+</div>
+
+<div class="productos-space">
+  {% if session.results %}
+
+  {% for meme in session.results %}
+
+    {% if meme.id_meme is same as(sameMeme) %}
+
+      {% else %}
+
+    {% set sameMeme = meme.id_meme %}
+  <!-- displaying ads -->
+
+              <form action="adInfo" class="form-product" method="post" id="{{"frm" ~ meme.id_meme}}" onclick="document.getElementById('{{"frm" ~ meme.id_meme}}').submit()">
+
+                  <p class="date">creado {{meme.create_At}}</p>
+                  <img src="{{meme.url}}" width="720" height="520" alt="{{meme.title}}"  class="imageG">
+
+                  <div class="InformationP">
+                    <div class="infoS">
+                        <h4>{{meme.title}}</h4>
+                        <p class="Price">$200,000</p>
+                    </div>
+                  </div>
+
+                    <input type="hidden" name="data" id="{{meme.id_meme}}" value="{{meme.title}}">
+                    <input type="hidden" name="id_meme" id="{{meme.id_meme}}" value="{{meme.id_meme}}"><p></p><br>
+
+              </form>
+
+    {% endif %}
+    {% endfor %}
+
+  {% else %}
+
+  {% for meme in memes %}
+
+    {% if meme.id_meme is same as(sameMeme) %}
+
+      {% else %}
+
+    {% set sameMeme = meme.id_meme %}
+  <!-- displaying ads -->
+
+              <form action="adInfo" class="form-product" method="post" id="{{"frm" ~ meme.id_meme}}" onclick="document.getElementById('{{"frm" ~ meme.id_meme}}').submit()">
+
+                  <p class="date">creado {{meme.create_At}}</p>
+                  <img src="{{meme.url}}" width="720" height="520" alt="{{meme.title}}"  class="imageG">
+
+                  <div class="InformationP">
+                    <div class="infoS">
+                        <h4>{{meme.title}}</h4>
+                        <p class="Price">$200,000</p>
+                    </div>
+                  </div>
+
+                    <input type="hidden" name="data" id="{{meme.id_meme}}" value="{{meme.title}}">
+                    <input type="hidden" name="id_meme" id="{{meme.id_meme}}" value="{{meme.id_meme}}"><p></p><br>
+
+              </form>
+
+    {% endif %}
+    {% endfor %}
+  {% endif %}
+</div>
+</div>
+
+<div class="" id="r"></div>
+{% endblock %}

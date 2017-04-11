@@ -1,0 +1,80 @@
+{% extends 'template/App.twig' %}
+
+{% block ChildContent %}
+
+<p></p><br>
+<p></p><br>
+
+<div class="PostAdb">
+    <h4>Numeros de usuarios registrados: {{numberUsers}}</h4>
+    <h4>Numeros de anuncios posteados: {{numberAds}}</h4>
+</div>
+<!-- don't allow img of the same ad self-repeat -->
+{% set sameMeme ="" %}
+
+    <div class="containerAdminPublication">
+
+        {% for meme in memes %}
+
+          {% if meme.id_meme is same as(sameMeme) %}
+
+            {% else %}
+
+          {% set sameMeme = meme.id_meme %}
+        <!-- displaying ads -->
+
+
+
+                          <form class="" action="adInfo" method="post" id="{{"frm" ~ meme.id_meme}}">
+                            <h4><b>Titulo del anuncio:</b> {{meme.title}}</h4>
+
+                            <button type="button" class="butonMPositionDel" name="button" onclick="deleteAd({{meme.id_meme}})" >X</button>
+
+                            <button type="button" class="butonMPositionEdt" name="button">&#931;</button><!--Este es el boton de editar-->
+
+                            <img src="{{meme.url}}" width="250" height="250" alt="{{meme.title}}" onclick="document.getElementById('{{"frm" ~ meme.id_meme}}').submit()" >
+
+                            <input type="hidden" name="data" value="{{meme.title}}">
+
+                            <input type="hidden" name="id_meme" id="{{"meme" ~ meme.id_meme}}" value="{{meme.id_meme}}">
+                          </form>
+
+
+
+              {% endif %}
+            {% endfor %}
+
+    </div><!--Cierre del contenedor adminPanelPublication-->
+
+
+  {% set userLeve1 = 0 %}
+
+
+  <div class="containerAdminNeoAdmin">
+    <h2>&#8667;Configuraci&oacute;n administrativa</h2>
+    <div class="usuariosO">
+        {% for user in users %}
+        {% if user.user_level == 1%}
+
+          {% else %}
+        <form class="" action="" id="{{user.id_user}}" name="{{user.id_user}}" method="post">
+
+
+              <h4><b>Usuario:&nbsp;</b>{{user.user}}</h4>
+              <h4><b>Correo:&nbsp;</b>{{user.email}}</h4>
+              <h4><b>Rango:&nbsp;</b>{{user.user_level}}</h4>
+
+              <div class="ButtonArea">
+                  <button type="button" class="mbutton m-red" name="button" onclick="deleteUser({{user.id_user}})">Borrar usuario</button>
+                  <button type="button" class="mbutton m-blue" name="button">Aumentar rango</button>
+              </div>
+
+              <input type="hidden" name="id_user" id="{{"user" ~ user.id_user}}" value="{{user.id_user}}"><p></p><br>
+
+
+        {% endif %}
+  </form>
+  {% endfor %}
+    </div>
+  </div>
+{% endblock %}

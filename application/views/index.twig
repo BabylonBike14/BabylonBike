@@ -1,0 +1,34 @@
+{% extends 'template/App.twig' %}
+
+{% block ChildContent %}
+<p></p><br>
+<p></p><br>
+<div class="publicidad-h"></div>
+<div class="publicidad-v"></div>
+{% set sameMeme ="" %}
+<!-- don't allow img of the same ad self-repeat -->
+{% for meme in memes %}
+
+  {% if meme.id_meme is same as(sameMeme) %}
+
+    {% else %}
+
+  {% set sameMeme = meme.id_meme %}
+<!-- displaying ads -->
+        <div class="information">
+            <form action="adInfo" method="post" id="{{"frm" ~ meme.id_meme}}">
+            <p class="Price">${{meme.price}}</p>
+              <img src="{{meme.url}}" width="720" height="520" alt="{{meme.title}}" onclick="document.getElementById('{{"frm" ~ meme.id_meme}}').submit()" ><br>
+              <div class="info">
+                  <h4>{{meme.title}}</h4>
+                  <p><b>Tipo: </b>{{meme.category}}</p>
+                  <p>{{meme.comment}}</p>
+              </div>
+              <p class="Date">publicado el {{meme.create_At}}</p>
+              <input type="hidden" name="data" id="{{meme.id_meme}}" value="{{meme.title}}">
+              <input type="hidden" name="id_meme" id="{{meme.id_meme}}" value="{{meme.id_meme}}"><p></p><br>
+            </form>
+            </div>
+  {% endif %}
+  {% endfor %}
+{% endblock %}

@@ -1,0 +1,91 @@
+{% extends 'template/App.twig' %}
+
+{% block ChildContent %}
+
+<p></p><br>
+<p></p><br>
+<div class="col-9">
+
+<!-- don't allow img of the same ad self-repeat -->
+{% set sameMeme ="" %}
+
+{% for meme in search %}
+
+  {% if meme.id_meme is same as(sameMeme) %}
+
+    {% else %}
+
+  {% set sameMeme = meme.id_meme %}
+<!-- displaying ads -->
+  <div class="GalInfo">
+            <div class="top-info">
+                <h4>{{meme.title}}</h4>
+                <p class="Price">{{meme.price}}</p>
+            </div>
+            <div class="ImageArea">
+            <img src="{{meme.url}}"  alt="{{meme.title}}" id="mainImg" class="imgB">
+
+              <div class="AimgS">
+                {% for img in search %}
+                  <img src="{{img.url}}" width="150" height="150" alt="{{img.title}}" id="{{img.img_id}}" onclick="changeImg({{img.img_id}})" class="imgS">
+                {% endfor %}
+              </div>
+
+            </div>
+
+            <div class="InformationData">
+                <div class="textInfo">
+
+                  <p><b>Tipo: </b>{{meme.category}}</p>
+                  <p>{{meme.comment}}</p>
+
+                  <p class="Date">{{meme.create_At}}</p>
+                </div>
+                <!-- response -->
+
+                <form class="" id="frmComment" action="#" method="post">
+                  <div class=""id="commentDiv"></div>
+                  <textarea name="comment" id="comment" style = "resize: none" rows="8" cols="80" required></textarea>
+                  <input type="submit" name="" value="Comentar">
+                  <input type="hidden" name="id_meme" value="{{meme.id_meme}}">
+                </form>
+            </div>
+
+      </div>
+
+      <a href="#"><div class="publicidad-s"></div></a>
+
+
+      {% endif %}
+    {% endfor %}
+  </div>
+
+   <div class="comments-container">
+     <ul id="comments-list" class="comments-list">
+       <li>
+  {% for comment in comments %}
+
+    <div class="comment-main-level">
+      <!-- Avatar -->
+      <div class="comment-avatar"><img src="http://i9.photobucket.com/albums/a88/creaticode/avatar_1_zps8e1c80cd.jpg" alt=""></div>
+      <!-- comment-box -->
+      <div class="comment-box">
+        <div class="comment-head">
+          <h6 class="comment-name by-author"><a href="http://creaticode.com/blog">{{comment.user}}</a></h6>
+          <span>{{comment.create_At}}</span>
+          <i class="fa fa-reply"></i>
+          <i class="fa fa-heart"></i>
+        </div>
+        <div class="comment-content">{{comment.comment}}</div></p>
+        <textarea name="" id="comment'.$comment['comment_id'].'" rows="2" cols="95" placeholder="responder"></textarea>
+        <button type="submit" class="btn btn-success" onclick = "userReply('.$comment['comment_id'].')" name="button">Responder</button>
+      </div>
+    </div></p>
+  {% endfor %}
+    </ul>
+      </li>
+        </ul>
+  </div>
+</div>
+
+{% endblock %}
