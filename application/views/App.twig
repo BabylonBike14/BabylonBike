@@ -1,0 +1,141 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="utf-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <link rel="shortcut icon" href="./application/public/logo/favicon.ico" type="image/x-icon"/>
+    <title>BabylonBike</title>
+
+    <!-- CSS -->
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.5/css/bootstrap.min.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/octicons/3.1.0/octicons.min.css">
+    <link rel="stylesheet" href="{{url}}/application/public/css/app.css">
+    <link rel="stylesheet" href="{{url}}/application/public/css/comments.css">
+
+    <!-- JS -->
+    <script src="https://use.fontawesome.com/dd0dafd7e0.js"></script>
+    <!--[if lt IE 9]>
+      <script src="https://cdn.jsdelivr.net/html5shiv/3.7.2/html5shiv.min.js"></script>
+      <script src="https://cdn.jsdelivr.net/respond/1.4.2/respond.min.js"></script>
+    <![endif]-->
+  </head>
+  <body>
+    <!-- logIn -->
+    {% include 'template/modals/logIn.twig' %}
+
+    <!-- signgIn -->
+    {% include 'template/modals/signIn.twig' %}
+
+    <!-- new Meme -->
+    {% include 'template/modals/newMeme.twig' %}
+    <div class="row">
+      {% block imgProfile %}
+        <div class="col-md-3"></div>
+      {% endblock %}
+  </div>
+
+    <nav class="navbar navbar-inverse navbar-fixed-top">
+      <div class="container-fluid">
+        <div class="navbar-header">
+          <a class="navbar-brand" href="{{url}}">
+            <img src="./application/public/logo/logoB.fw.png" alt="Babylon Bike" height="30px;">
+          </a>
+    </div>
+
+    <ul class="nav navbar-nav navbar-right">
+
+      {% if session.id_user is defined %}
+
+        <li>
+          <a href="{{url}}User/profile" class="mbr-buttons_link">{{session.info_user.user}}</a>
+        </li>
+        {% if session.info_user.user_level %}
+
+        <li>
+          <a href="{{url}}Admin" class="mbr-buttons_link">Admin panel</a>
+        </li>
+      {% endif %}
+        <li data-toggle = "modal" data-target = "#Meme">
+          <a class="mbr-buttons_link">Nuevo??</a>
+        </li>
+        <li>
+          <a href="{{url}}User/logOut" class="mbr-buttons_link">Desconectarse??</a>
+        </li>
+
+	       {% elseif session.facebook_access_token %}
+
+          <li>
+            <a href="{{url}}User/profile" class="mbr-buttons_link">{{session.facebookUser.name}}</a>
+         </li>
+
+          <li>
+            <a href="#" class="mbr-buttons_link">Desconectarse</a>
+         </li>
+      {% else %}
+
+          <li data-toggle="modal" data-target="#sign_In" class="mbr-navbar_item">
+            <a class="mbr-buttons_link">Registrarse??</a>
+          </li>
+          <li data-toggle="modal" data-target="#log_In" class="mbr-navbar_item">
+            <a class="mbr-buttons_link">Iniciar Sesion</a>
+          </li>
+
+          <li>
+            <a href="{{url}}/fb" class="mbr-buttons_link">Iniciar Sesion con facebook</a>
+          </li>
+      {% endif %}
+    </ul>
+
+    <ul class="nav navbar-nav navbar-left">
+      <li>
+        <a href="{{url}}" class="mbr-buttons_link">Inicio</a>
+      </li>
+      <li>
+        <a href="{{url}}Categories" class="mbr-buttons_link">Categorias??</a>
+      </li>
+      <li>
+        <a href="{{url}}aboutUs" class="mbr-buttons_link">Nosotros??</a>
+      </li>
+    </ul>
+
+    <div class="col-sm-3 col-md-3">
+       <form class="navbar-form" action="search" method="post">
+       <div class="input-group">
+           <input type="text" class="form-control" placeholder="Search" name="data">
+           <div class="input-group-btn">
+               <button class="btn btn-default" type="submit"><i class="glyphicon glyphicon-search"></i></button>
+           </div>
+         </div>
+       </form>
+   </div>
+
+  </div>
+</nav>
+    <!-- Navigation -->
+
+
+
+            <!-- <div class="publicidad"></div> -->
+
+
+              {% block ChildContent %}
+              {% endblock %}
+
+
+
+
+    <script src="https://cdn.jsdelivr.net/jquery/2.1.3/jquery.min.js"></script>
+    <script src="https://cdn.jsdelivr.net/bootstrap/3.3.5/js/bootstrap.min.js"></script>
+
+    <script src="{{url}}/application/public/js/app.js" charset="utf-8"></script>
+
+    <script type="text/javascript">
+      $(document).ready(function()
+      {
+          url = '{{url}}';
+
+      });
+    </script>
+  </body>
+</html>
