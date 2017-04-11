@@ -63,6 +63,15 @@
           <a href="{{url}}User/logOut" class="mbr-buttons_link">Desconectarse??</a>
         </li>
 
+	       {% elseif session.facebook_access_token %}
+
+          <li>
+            <a href="{{url}}User/profile" class="mbr-buttons_link">{{session.facebookUser.name}}</a>
+         </li>
+
+          <li>
+            <a href="#" class="mbr-buttons_link">Desconectarse</a>
+         </li>
       {% else %}
 
           <li data-toggle="modal" data-target="#sign_In" class="mbr-navbar_item">
